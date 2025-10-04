@@ -1,5 +1,6 @@
 services:
   doggoscope:
+    domainname: doggoscope.wessleyn.me
     restart: unless-stopped
     build:
       context: .
