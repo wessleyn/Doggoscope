@@ -9,7 +9,6 @@ RUN apt-get update -qq \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt /api/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
