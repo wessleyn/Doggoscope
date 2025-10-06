@@ -20,7 +20,7 @@ I point my Pi at dog pics, and it tells me stats.
 3. Run Web Server:
 
    ```bash
-   gunicorn -w 4 -b 0.0.0.0:8000 src.app:app
+   gunicorn -w 4 -b 0.0.0.0:8000 src.app:app or flask --app src.app  run
    ```
 
 4. Open your browser to `http://localhost:8000` and upload a dog picture to see the stats!
