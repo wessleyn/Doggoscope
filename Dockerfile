@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 5000
 
 ENV FLASK_APP=api/index.py
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "api.index:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "src.app:app"]

@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Gunicorn Server",
+			"type": "shell",
+			"command": "source venv/bin/activate && gunicorn -w 4 -b 0.0.0.0:8000 api.index:app",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

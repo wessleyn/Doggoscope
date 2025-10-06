@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block head %}
+<title>About DoggoScope</title>
+<meta
+  name="description"
+  content="Learn more about DoggoScope and our mission to help dog lovers"
+/>
+{% endblock head %} {% block body %}
+<div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+  <div class="border-b-2 border-primary-yellow pb-4 mb-6">
+    <h1 class="text-3xl font-bold mb-2">About Us</h1>
+    <p class="text-gray-700">Learn more about DoggoScope and our mission</p>
+  </div>
+
+  <div class="prose lg:prose-lg max-w-none">
+
+    <p class="mb-4">
+      DoggoScope is dedicated to providing the best experience for dog lovers
+      everywhere. Our mission is to connect people with their furry friends
+      through innovative technology and heartfelt stories.
+    </p>
+
+
+    <h2 class="text-2xl font-bold mt-8 mb-4">Technology</h2>
+    <p class="mb-4">
+      Using advanced computer vision and machine learning algorithms, DoggoScope
+      can analyze images of dogs to provide information about:
+    </p>
+
+    <ul class="list-disc ml-6 mb-6">
+      <li class="mb-2">Breed identification with high accuracy</li>
+      <li class="mb-2">Estimated age based on visual markers</li>
+      <li class="mb-2">Mood and emotional state analysis</li>
+      <li class="mb-2">Activity level and energy assessment</li>
+    </ul>
+
+    <div class="bg-gray-50 border-l-4 border-primary-yellow p-4 rounded my-6">
+      <p class="italic">
+        Thank you for being a part of the DoggoScope community!
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock body %}

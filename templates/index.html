@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Doggo Scope</title>
+<meta name="description" content="DoggoScope - Point at your dog to see its stats">
+{% endblock head %}
+
+{% block body %}
+<div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+    <div class="border-b-2 border-primary-yellow pb-4 mb-6">
+        <h1 class="text-3xl font-bold mb-2">Welcome to DoggoScope!</h1>
+        <p class="text-gray-700">Use our advanced computer vision technology to analyze your dog and get instant stats.
+        </p>
+    </div>
+
+    <div class="flex flex-row gap-6 justify-between flex-wrap">
+        <div>
+            <div class="mb-6">
+                <label for="dog-image" class="block font-semibold mb-2">Upload an image of your dog:</label>
+                <input type="file" id="dog-image" name="dog-image" accept="image/*"
+                    class="w-full p-3 border border-gray-300 rounded-md">
+                <p class="text-sm text-gray-600 mt-1">Or use your camera to capture your dog in real-time</p>
+            </div>
+
+            <div class="bg-yellow-200 p-1 rounded-md text-center">
+                <button
+                    id="camera-btn"
+                    class="bg-accent text-stone-950 font-semibold py-3 px-6 rounded-md hover:bg-accent-hover transition-transform hover:-translate-y-0.5">
+                    Activate Camera
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <img id="preview-image" src="" alt="Dog Preview" class="mt-4 rounded-md shadow-md hidden">
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.getElementById('dog-image');
+        const previewImage = document.getElementById('preview-image');
+        const cameraBtn = document.getElementById('camera-btn');
+
+        fileInput.addEventListener('change', function (e) {
+            console.log('File input changed');
+            if (e.target.files && e.target.files[0]) {
+                const file = e.target.files[0];
+                console.log('File selected:', file.name, 'Type:', file.type, 'Size:', file.size, 'bytes');
+                
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    console.log('File read successfully');
+                    previewImage.src = event.target.result;
+                    previewImage.classList.remove('hidden');
+                    console.log('Preview image updated');
+                }
+                console.log('Reading file...');
+                reader.readAsDataURL(file);
+            } else {
+                console.log('No file selected or selection canceled');
+            }
+        });
+
+        cameraBtn.addEventListener('click', function () {
+            alert('Camera functionality coming soon!');
+        });
+    });
+</script>
+{% endblock body %}

@@ -4,16 +4,23 @@ I point my Pi at dog pics, and it tells me stats.
 
 ## Setup
 
-1. Install dependencies:
+1. Create a virtual environment and activate it:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+2. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-2. Run Web Server:
+3. Run Web Server:
 
    ```bash
-   flask --app api.index  run
+   gunicorn -w 4 -b 0.0.0.0:8000 src.app:app
    ```
 
-3. Open your browser to `http://localhost:5000` and upload a dog picture to see the stats!
+4. Open your browser to `http://localhost:8000` and upload a dog picture to see the stats!
